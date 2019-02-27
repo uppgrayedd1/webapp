@@ -1,0 +1,19 @@
+{% extends "mgmt/base.html" %}
+{% block content %}
+
+{% endblock content %}
+
+{% block sidebar %}
+          <div class="content-section">
+            <h3>Forms</h3>
+            <p class='text-muted'>Select Form.
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="{% url 'add-emp' %}">Add Employee</a></li>
+                <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="{% url 'add-dept' %}">Add Department</a></li>
+                <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="{% url 'add-prop' %}">Add Property</a></li>
+              </ul>
+            </p>
+          </div>
+{% endblock sidebar %}
+
+

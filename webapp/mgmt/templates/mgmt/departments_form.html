@@ -1,0 +1,29 @@
+{% extends "mgmt/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Add Department</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Add</button>
+            </div>
+        </form>
+    </div>
+{% endblock content %}
+
+{% block sidebar %}
+          <div class="content-section">
+            <h3>Forms</h3>
+            <p class='text-muted'>Select Form.
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="{% url 'add-emp' %}">Add Employee</a></li>
+                <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="{% url 'add-dept' %}">Add Department</a></li>
+                <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="{% url 'add-prop' %}">Add Property</a></li>
+              </ul>
+            </p>
+          </div>
+{% endblock sidebar %}

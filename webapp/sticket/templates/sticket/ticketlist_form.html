@@ -1,0 +1,34 @@
+{% extends "mgmt/base.html" %}
+{% block content %}
+    {% for ticket in tickets %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ ticket.ticket_name }}</a>
+            </div>
+              <small class="text-muted"><b>Description: </b>{{ ticket.ticket_description }}</small></br>
+              <small class="text-muted"><b>Department: </b>{{ ticket.department }}</small></br>
+              <small class="text-muted"><b>Property: </b>{{ ticket.property }}</small></br>
+              <small class="text-muted"><b>Location: </b>{{ ticket.location }}</small></br>
+              <small class="text-muted"><b>Created On: </b>{{ ticket.created_on }}</small></br>
+                <div class="article-metadata">
+                    <a class="mr-2" href="#">Assign Ticket</a>
+                </div>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}
+
+{% block sidebar %}
+          <div class="content-section">
+            <h3>Forms</h3>
+            <p class='text-muted'>Select Form.
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="{% url 'new-stkt' %}">New Service Ticket</a></li>
+                <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="{% url 'new-assgn' %}">Assign Ticket</a></li>
+                <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="{% url 'new-status' %}">Update Status</a></li>
+                <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="{% url 'ticket_list' %}">List Tickets</a></li>
+              </ul>
+            </p>
+          </div>
+{% endblock sidebar%}
